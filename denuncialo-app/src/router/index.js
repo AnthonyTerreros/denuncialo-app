@@ -27,6 +27,9 @@ const router = createRouter({
       path: "/",
       name: "init",
       component: Header,
+      meta: {
+        requireAuth: true,
+      },
       children: [
         {
           path: "/home",
@@ -51,6 +54,16 @@ const router = createRouter({
       ],
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  const needAuth = to.meta.requireAuth;
+  const cookieAuth = $cookies.get("auth");
+  if (needAuth && !cookieAuth) {
+    next("login");
+    return;
+  }
+  next();
 });
 
 export default router;

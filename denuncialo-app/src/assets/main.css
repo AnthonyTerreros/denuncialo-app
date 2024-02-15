@@ -5,3 +5,13 @@
 .bg-background-banner {
     background-image: url("@/assets/background.jpg");
 }
+
+.btn {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.btn-success {
+    @apply bg-green-500 hover:bg-green-700;
+}

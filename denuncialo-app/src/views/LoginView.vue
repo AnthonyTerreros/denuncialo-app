@@ -36,7 +36,7 @@ async function handleSubmitLogin() {
 
 <template>
   <div
-    class="bg-red-50 max-w-full min-h-screen mx-auto flex flex-col md:flex-row text-black"
+    class="bg-gray-50 max-w-full min-h-screen mx-auto flex flex-col md:flex-row text-black"
   >
     <div
       class="w-full md:w-1/2 max-h-full flex flex-col justify-center align-center"
@@ -78,7 +78,7 @@ async function handleSubmitLogin() {
             label="Sign In"
             type="submit"
           >
-            Sign In
+            Iniciar Sesion
           </button>
         </div>
       </form>

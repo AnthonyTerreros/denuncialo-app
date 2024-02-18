@@ -25,33 +25,32 @@ const router = createRouter({
     },
     {
       path: "/",
-      name: "init",
+      // name: "init",
       component: Header,
       meta: {
         requireAuth: true,
+        roles: ["Administrador", "Usuario"],
       },
-      children: [
-        {
-          path: "/home",
-          name: "home",
-          component: HomeView,
-        },
-        {
-          path: "/about",
-          name: "about",
-          component: () => import("../views/AboutView.vue"),
-        },
-        {
-          path: "/denuncias",
-          name: "denuncias",
-          component: DenunciaView,
-        },
-        {
-          path: "/denuncias/:id",
-          name: "denuncia",
-          component: Denuncia,
-        },
-      ],
+    },
+    {
+      path: "/home",
+      name: "home",
+      component: HomeView,
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: () => import("../views/AboutView.vue"),
+    },
+    {
+      path: "/denuncias",
+      name: "denuncias",
+      component: DenunciaView,
+    },
+    {
+      path: "/denuncias/:id",
+      name: "denuncia",
+      component: Denuncia,
     },
   ],
 });
